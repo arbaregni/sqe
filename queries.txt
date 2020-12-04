@@ -4,8 +4,6 @@
 314:::Commercial harvesting of marine vegetation such as  algae, seaweed and kelp for food and drug purposes. 
 316:::A look at the roots and prevalence of polygamy  in the world today. 
 324:::Define Argentine and British international relations   
-325:::Describe a cult by name and identify the cult members' activities in their everyday life. 
-330:::This query is looking for examples of cooperation or friendly ties between Iran and Iraq, or ways in which the two countries could be considered allies.             
 334:::Determine the usefulness and effectiveness of  continuing to maintain export controls on  encryption software. 
 337:::What research has been done on viral hepatitis  and what progress has been made in its treatment? 
 338:::What adverse effects have people experienced while taking  aspirin repeatedly? 
@@ -21,7 +19,6 @@
 377:::Identify documents that discuss the renewed  popularity of cigar smoking. 
 381:::What forms of alternative medicine are being used in the treatment of illnesses or diseases and how successful are they? 
 385:::Identify documents that discuss the current status of hybrid automobile engines, (i.e., cars fueled by something other than gasoline only). 
-391:::Identify documents that discuss the impact of the cost of research and development (R&D) on the price of drugs. 
 392:::What are the applications of robotics in the world today? 
 401:::What language and cultural differences impede the integration  of foreign minorities in Germany? 
 404:::How often were the peace talks in Ireland delayed or disrupted as a result of acts of violence? 
