@@ -52,6 +52,8 @@ def main_synsets_of(tokens):
         for tok, pos in tagged
         if pos == wordnet.NOUN # or pos == wordnet.VERB
     ]
+    # remove empty sets (otherwise there are no feasible solutions
+    synset_choices = filter(lambda choices: len(choices) != 0, synset_choices)
     # print(synset_choices)
     # we want to pick a synset for each noun/verb.
     # this is an element of the cartesian product S_1 × S_2 × ...
@@ -93,13 +95,11 @@ def expand_query(original_query):
 ##    query = expand_query(original, 0.5)
 ##    print(f'Expanded query> {query}')
 
-
 # list of (query id, query text) pairs
 queries = []
 with codecs.open('queries.txt','r','UTF-8') as file:
     for line in file:
-        elements = line.split(":::")
-        qid, qtext = elements[0], elements[1]
+        qid, qtext = line.split(":::")
         queries.append((qid, qtext))
 
 # find their expansions
@@ -107,4 +107,5 @@ with codecs.open('expansions.txt', 'w', 'UTF-8') as file:
     for qid, qtext in queries:
         print(f'Expanding query {qid}...')
         expansion = ' '.join(expand_query(qtext))
+        print(expansion)
         file.write(f'{qid}:::{expansion}\n')

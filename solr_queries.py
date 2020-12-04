@@ -3,7 +3,6 @@ import json
 import urllib.parse
 import urllib.request
 import codecs
-import query_expansion as qe
 
 #Solr parameters
 PORT = '8983'
@@ -14,6 +13,7 @@ NUM_FILES = 100
 IR_MODEL = 'DFR' 
 
 def make_request(query):
+    print(f'making request "{query}"...')
     query = urllib.parse.quote(query)
     url = f'http://localhost:{PORT}/solr/{COLLECTION}/select?fl=docno%2C%20score&q=doctext%3A({query})&rows={NUM_FILES}&sort=score%20desc'
     data = urllib.request.urlopen(url)
@@ -21,7 +21,9 @@ def make_request(query):
 
 def run_test_queries(queries, expansions, expansion_weight, file):
     for qid, query_text in queries:
-        results = make_request(f'{query_text} {expansions[qid]}')
+        expansion_terms = expansions[qid].split(' ')
+        expansion = ' '.join([f'{term}^{expansion_weight}' for term in expansion_terms])
+        results = make_request(f'{query_text} {expansion}')
         rank = 1
         for result in results:
             docno = str(result["docno"]).replace("'", '').replace(']', '').replace('[', '')
